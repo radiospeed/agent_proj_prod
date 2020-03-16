@@ -1,0 +1,13 @@
+.fithello{
+    background-color: red;
+    border: 10px solid black;
+}
+
+.selector-add{
+    @include btn;
+    @include btn-primary;
+}
+
+.errorDisplay{
+    color: red;
+}

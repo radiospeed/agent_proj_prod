@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit operative</title>
+    </head>
+    <body>
+        <p></p>
+        {% if message %}
+            {{ message }}
+        {% endif %}
+        <p></p>
+        {% if editForm and operative_id %}
+            <h3>Edit operative</h3>
+            <p></p>
+            <h4>Edit:</h4>
+            <form name="editOperativeForm" action="{% url 'teamoperation:operative_edit_submit' operative_id %}" method="POST">
+                {% csrf_token %}
+                <div class="formWrap">
+                    <h1>operative_id: {{ operative_id }} </h1>
+                    {{ editForm.name.errors }}
+                    <label for="{{ editForm.name.id_for_lable}}">Name: </label>
+                    {{ editForm.name }}
+                    <p></p>
+                    {{ editForm.email.errors }}
+                    <label for="{{ editForm.email.id_for_lable}}">Name: </label>
+                    {{ editForm.email }}
+                    <p></p>
+
+                </div>
+                <input type="submit" value="Edit this Operative">
+            </form>
+
+            <p></p>
+            
+        {% else %}
+            <h3>No operative to edit</h3>
+        {% endif %}
+    </body>
+</html>

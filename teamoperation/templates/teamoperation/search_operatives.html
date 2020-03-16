@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search operatives</title>
+    </head>
+    <body>
+        <h2>Search operatives</h2>
+        <p></p>
+        {% if list_operatives %}
+            <ul>
+                {% for operative in list_operatives %}
+                    <li><a href="{% url 'teamoperation:edit_operative' operative.id %}">{{ operative.name }} </a></li>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No operatives</p>
+        {% endif %}
+        <p></p>
+        <h3><a href="{% url 'teamoperation:index' %}">Back</a></h3>
+    </body>
+</html>

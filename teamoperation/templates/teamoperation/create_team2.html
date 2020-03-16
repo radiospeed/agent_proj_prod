@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>Create team</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        
+        <script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+        <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="/static/teamoperation/style3.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="/static/teamoperation/style2.css" />
+
+            <link rel="stylesheet" type="text/css" href="/static/admin/css/widgets.css" />
+            
+        <link rel="stylesheet" type="text/css" href="/static/teamoperation/style3.css" />
+        -->
+        
+    </head>
+    <body>
+        <h2 class="mine">Create team: css alter 5555</h2>
+        <p></p>
+        (remember long names may mess up css)
+        <p></p>
+        {{ teamForm.media }}
+        <div class="op-container">
+            <form class = "teamForm" name = "teamCreate" enctype="multipart/form-data" 
+            action="{% url 'teamoperation:create_team' %}" method = "POST">
+            {% csrf_token %}
+            <div class = "formWrap">
+                {{ teamForm.awteam_name.errors }}
+                <label for="{{ teamForm.awteam_name.id_for_label }}">Enter team name: </label>
+                {{ teamForm.awteam_name }}
+                <p></p>
+                {{ teamForm.op_team.errors }}
+                <label for="{{ teamForm.op_t.id_for_label }}">Enter team name: </label>
+                {{ teamForm.op_team }}
+                <p></p>
+            </div>
+            <p></p>
+            <center><input type="submit" value="Create Team" class="submit-button"></center>
+        </form>
+        <p></p>
+
+        </div>
+        
+
+    </body>
+</html>

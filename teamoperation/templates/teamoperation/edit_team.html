@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View and edit team</title>
+
+    </head>
+    <body>
+        <h2>View and edit team</h2>
+        <p></p>
+        {% if viewTeam and viewOp %}
+            <strong>Team name: </strong>{{ viewTeam.awteam_name }}
+            <p></p>
+            <strong>Team agents:</strong> 
+            <br>
+            {% for x in viewOp %}
+                {{ x.name }} AT {{ x.email }}
+                <br>
+            {% endfor %}
+
+        {% else %}
+            <h3>No team to edit</h3>
+        {% endif %}
+        <p></p>
+        <a href="{% url 'teamoperation:create_mission_for_team' viewTeam.id %}">Assign mission to this team</a>
+        <p></p>
+        <h3><a href="{% url 'teamoperation:index' %}">Back</a></h3>
+    </body>
+    
+</html>

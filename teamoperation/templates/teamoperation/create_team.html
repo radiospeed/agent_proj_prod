@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>Create team</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        
+        <script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+        <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/widgets.css" />
+        <link rel="stylesheet" href=" {% static "teamoperation\style2.css" %} ">
+        <link rel="stylesheet" href="static/teamoperation/style.css">
+        
+    </head>
+    <body>
+        <h2>Create team</h2>
+        <p></p>
+        {{ teamForm.media }}
+        <form class = "teamForm" name = "teamCreate" enctype="multipart/form-data" 
+        action="{% url 'teamoperation:create_team' %}" method = "POST">
+            {% csrf_token %}
+            <div class = "formWrap">
+                {{ teamForm.awteam_name.errors }}
+                <label for="{{ teamForm.awteam_name.id_for_label }}">Enter team name: </label>
+                {{ teamForm.awteam_name }}
+                <p></p>
+                {{ teamForm.op_team.errors }}
+                <label for="{{ teamForm.op_t.id_for_label }}">Enter team name: </label>
+                {{ teamForm.op_team }}
+                <p></p>
+            </div>
+            <input type="submit" value="create">
+        </form>
+
+    </body>
+</html>

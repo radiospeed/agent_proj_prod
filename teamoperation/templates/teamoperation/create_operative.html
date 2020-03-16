@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create new operative</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <h2>Create operative</h2>
+        <form class ="operativeForm" name="operativeCreate" enctype="multipart/form-data" action="{% url 'teamoperation:create_operative' %}" method="POST">
+            {% csrf_token %}
+            <div class = "formWrap">
+                {{ operativeForm.name.errors }}
+                <label for="{{ operativeForm.name.id_for_label }}">Enter name: </label>
+                <!--can do either operativeForm.name.id_for_label (for id) 
+                or can do operativeForm.name.label (for name)-->
+                {{ operativeForm.name }}
+                <p></p>
+                {{ operativeForm.email.errors }}
+                <label for="{{ operativeForm.email.id_for_label }}">Enter email: </label>
+                {{ operativeForm.email }}
+                <p></p>
+                <!--   https://docs.djangoproject.com/en/3.0/topics/forms/
+                    {{ field.value }}
+                    {{ field.html_name }}
+                    {{ field.id_for_label }}
+                The ID that will be used for this field (id_email in the example above). If you are constructing 
+                the label manually, you may want to use this in lieu of label_tag. It’s also useful, for example, 
+                if you have some inline JavaScript and want to avoid hardcoding the field’s ID.
+                -->
+            </div>
+
+            <input type="submit" value="create">
+
+        </form>
+
+    </body>
+</html>

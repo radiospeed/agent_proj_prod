@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create mission</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <h2>Create mission</h2>
+        <form class="missionForm" name="missionForm" enctype="multipart/form-data" action="{% url 'teamoperation:create_mission' %}" method="POST">
+            {% csrf_token%}
+            <div class="formWrap">
+                {{ missionForn.mission_name.errors }}
+                <label for="{{ missionForm.mission_name.id_for_label }} ">Enter name of mission: </label>
+                {{ missionForm.mission_name }}
+                <p></p>
+                {{ missionForm.awteam.errors }}
+                <label for="{{ missionForm.awteam.id_for_label }}"> Enter team: </label>
+                {{ missionForm.awteam }}
+                <p></p>
+                {{ missionForm.type.errors }}
+                <label for="{{ missionForm.type.id_for_label }}">Enter type: </label>
+                {{ missionForm.type }}
+                <p></p>
+                {{ missionForm.notes.errors }}
+                <label for="{{ missionForm.notes.id_for_label }}">Enter type: </label>
+                {{ missionForm.notes }}
+
+            </div>
+            <input type="submit", value="createMission">
+
+        </form>
+    </body>
+</html>

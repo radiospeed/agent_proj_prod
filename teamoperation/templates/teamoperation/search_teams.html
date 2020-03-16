@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search teams</title>
+    </head>
+    <body>
+        <h2>Search teams</h2>
+        <p></p>
+        {% if list_teams %}
+            <ul>
+                {% for team in list_teams %}
+                    <li><a href="{% url 'teamoperation:edit_team' team.id %}">{{ team.awteam_name }} </a></li>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No teams</p>
+        {% endif %}
+        <p></p>
+        <h3><a href="{% url 'teamoperation:index' %}">Back</a></h3>
+    </body>
+</html>

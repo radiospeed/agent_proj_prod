@@ -25,7 +25,7 @@ SECRET_KEY = '&#v9xc)l+mt+(g@rd*$d3bj^&kn19+pq4f8&^sn2%sw2)32+b!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['radiospeed.pythonanywhere.com/', ]
+ALLOWED_HOSTS = ['radiospeed.pythonanywhere.com']
 
 
 # Application definition

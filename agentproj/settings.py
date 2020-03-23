@@ -26,7 +26,7 @@ SECRET_KEY = '&#v9xc)l+mt+(g@rd*$d3bj^&kn19+pq4f8&^sn2%sw2)32+b!'
 DEBUG = True
 
 ALLOWED_HOSTS = ['radiospeed.pythonanywhere.com', ]
-#dont put slash
+#dont put slash after .com
 
 # Application definition
 

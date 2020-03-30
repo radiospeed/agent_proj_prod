@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    {% load static %}
     <head>
         <title>ArmadilloW mission list</title>
         <meta charset="utf-8">
@@ -27,6 +28,8 @@
         <a href="{% url 'teamoperation:search_team' %}">Search team</a>
         <p></p>
         <a href="{% url 'teamoperation:create_mission' %}">Create Mission</a>
+        <p></p>
+        <img src="{% static "teamoperation\kitten.jpg" %} " alt="" height="100">
 
     </body>
 </html>
